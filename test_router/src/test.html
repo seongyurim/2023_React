@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const useState = function(val)
+        {
+            // 배열 하나 리턴해주기
+            return [val, 20];
+            // 베열의 참조값 리턴
+        }
+
+        const useState2 = function(val)
+        {
+            // 배열 하나 리턴해주기
+            return [val, function data4 ()
+            {
+                console.log("Hello!")
+            }];
+            // 베열의 참조값 리턴
+        }
+
+
+        let data = useState(45);
+        // 베열의 참조값 리턴
+
+        console.log(data[0]);
+        console.log(data[1]);
+        // 45, 20 출력 됨
+
+        // 역시 배열을 하나 리턴해주는데
+        let [data1,data2] = useState(45);
+
+        console.log(data1);
+        console.log(data2);
+        // 45, 20 출력 됨
+
+        // 결국 위의 코드는 아래코드와 같음
+        // let data = useState(45);
+        // let data1 = data[0];
+        // let data2 = data[1];
+
+        // 즉, 리턴되는 데이터를 분해해서 각각의 자리에 넣어주는 것이므로
+        // 구조분헤문법이라고 표현 함
+
+        let [data3, data4] = useState2(45);
+        data4();
+
+    </script>
+</body>
+</html>
