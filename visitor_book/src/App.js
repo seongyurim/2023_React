@@ -17,6 +17,7 @@ function App() {
     // 확인하기
     // console.log("명단추가");
 
+    // visitors를 갱신한다.
     // setVisitors에 [추가된 이름, 기존의 명단] 세팅해서 추가
     // 즉, 추가된 후 변경된 부분만 다시 그려지는 것
     setVisitors([newVisitor, ...visitors]);
@@ -28,10 +29,10 @@ function App() {
   return (
     <div className="App">
       {/* input의 value에 newVisitor 설정해줌 */}
-      <input type="text" value={newVisitor} onChange={(e)=>
+      <input type="text" value={newVisitor} onChange={(e)=> // Real DOM이 아니라 Virtual DOM임에 유의하자.
       { setNewVisitor(e.target.value);
-      // console.log(newVisitor);
-      // input창 안에 글을 쓸 때 마다 console에 찍힘
+        // console.log(newVisitor);
+        // input창 안에 글을 쓸 때 마다 console에 찍힘
       }}/>
       <button type="button" onClick={insertVisitorProc}>명단 추가</button>
       <hr></hr>
