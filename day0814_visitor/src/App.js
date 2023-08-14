@@ -19,6 +19,7 @@ function App() {
     setNewVisitor(e.target.value);
   }
 
+  // 실제로 렌더링되는 영역
   return (
     <div className="App">
       <input type="text" value={newVisitor} onChange={changeInputBox}/> 
